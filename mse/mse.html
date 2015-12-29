@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>MSE Basic Test</title>
+    </head>
+
+    <body>
+        <div style="font-size: 20px">Log: <span id="log"></span></div>
+        <br />
+        <div>MSE Supports: <span id="mseSupport"></span></div>
+        <div>MSE Version: <span id="mseVersion"></span></div>
+
+        <script>
+            var log = document.getElementById('log');
+
+            function basicMseTest() {
+                var mseSupport = document.getElementById('mseSupport');
+
+                if (window.MediaSource) {
+                    mseSupport.innerHTML = 'true';
+
+                    var ms = new MediaSource();
+                    if (!ms) {
+                        log.innerHTML = "MediaSource() creation failed.";
+                        return;
+                    }
+
+                    if (ms.version) {
+                        mseVersion.innerHTML = ms.version;
+                    }
+
+                } else {
+                    mseSupport.innerHTML = 'false';
+                    log.innerHTML = "No MSE support.";
+                    return;
+                }
+            }
+            basicMseTest();
+        </script>
+    </body>
+
+</html>
