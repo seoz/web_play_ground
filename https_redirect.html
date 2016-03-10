@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>https redirect</title>
+<script>
+// If this page is loaded over HTTP, redirect to HTTPS.
+if (window.location.protocol == "http:") {
+    window.location = "https:" + window.location.href.substr(window.location.protocol.length)
+}
+</script>
+</head>
+
+<body>
+</body>
+</html>
