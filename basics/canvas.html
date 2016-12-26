@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+    Reference: http://www.w3schools.com/graphics/canvas_intro.asp
+    The HTML <canvas> element is used to draw graphics, on the fly, via scripting (usually JavaScript).
+    The <canvas> element is only a container for graphics. You must use a script to actually draw the graphics.
+    Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+//-->
+<html>
+<head>
+    <title>Canvas</title>
+<style>
+    /* By default, the <canvas> element has no border and no content. */
+    canvas {
+        border: 1px solid #000000;
+    }
+</style>
+</head>
+
+<body>
+
+<div><h1>Canvas Basic</h1><canvas id="canvasBasic" width="300" height="200"></canvas></div>
+<div><h1>Canvas Rect</h1><canvas id="canvasRect" width="300" height="200"></canvas></div>
+<div><h1>Canvas Line</h1><canvas id="canvasLine" width="300" height="200"></canvas></div>
+<div><h1>Canvas Circle</h1><canvas id="canvasCircle" width="300" height="200"></canvas></div>
+<div><h1>Canvas Arc</h1><canvas id="canvasArc" width="300" height="200"></canvas></div>
+
+<script>
+function basic() {
+    var canvas = document.getElementById("canvasBasic"); // get <canvas> element
+    var ctx = canvas.getContext("2d"); // get a drawing object for the canvas
+}
+
+function drawRect() {
+    var canvas = document.getElementById("canvasRect");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ff0000"; // The fillStyle property can be a CSS color, a gradient, or a pattern. The default fillStyle is black.
+    ctx.fillRect(0, 0, 150, 75);
+}
+
+function drawLine() {
+    var canvas = document.getElementById("canvasLine");
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#0000ff";
+    ctx.moveTo(0, 0);
+    ctx.lineTo(200, 100);
+    ctx.stroke();
+}
+
+function drawCircle() {
+    var canvas = document.getElementById("canvasCircle");
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#ff0000";
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI); //arc(x,y,r,startangle,endangle)
+    ctx.stroke();
+}
+
+function drawArc() {
+    var canvas = document.getElementById("canvasArc");
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "#ff0000";
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 1, Math.PI); // left of circle: 0(= 2 * Math.PI) , right of circle: Math.PI
+    ctx.stroke();
+}
+
+basic();
+drawRect();
+drawLine();
+drawCircle();
+drawArc();
+</script>
+
+</body>
+</html>
