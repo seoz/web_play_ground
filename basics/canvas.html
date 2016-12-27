@@ -23,6 +23,10 @@
 <div><h1>Canvas Line</h1><canvas id="canvasLine" width="300" height="200"></canvas></div>
 <div><h1>Canvas Circle</h1><canvas id="canvasCircle" width="300" height="200"></canvas></div>
 <div><h1>Canvas Arc</h1><canvas id="canvasArc" width="300" height="200"></canvas></div>
+<div><h1>Canvas Linear Gradient</h1><canvas id="canvasLinearGradient" width="300" height="200"></canvas></div>
+<div><h1>Canvas Radial Gradient</h1><canvas id="canvasRadialGradient" width="300" height="200"></canvas></div>
+<div><h1>Canvas Arc</h1><canvas id="canvasArc" width="300" height="200"></canvas></div>
+<div><h1>Canvas Arc</h1><canvas id="canvasArc" width="300" height="200"></canvas></div>
 
 <script>
 function basic() {
@@ -64,11 +68,42 @@ function drawArc() {
     ctx.stroke();
 }
 
+function drawLinearGradient() {
+    var canvas = document.getElementById("canvasLinearGradient");
+    var ctx = canvas.getContext("2d");
+
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 150);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(0.5, "blue");
+    grd.addColorStop(1, "white");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 200, 100);
+}
+
+function drawRadialGradient() {
+    var canvas = document.getElementById("canvasRadialGradient");
+    var ctx = canvas.getContext("2d");
+
+    // Create gradient
+    var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "white");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10, 10, 200, 200);
+}
+
 basic();
 drawRect();
 drawLine();
 drawCircle();
 drawArc();
+drawLinearGradient();
+drawRadialGradient();
 </script>
 
 </body>
