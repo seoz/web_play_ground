@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+    Reference
+        http://www.w3schools.com/html/html5_video.asp
+        http://www.w3schools.com/tags/ref_av_dom.asp
+//-->
+<html>
+    <head>
+        <title>Video Tag Test</title>
+    </head>
+    <body>
+        <video id="myVideo" width="640" height="360" controls>
+            <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support HTML5 video tag.
+        </video>
+
+        <script>
+            var video = document.getElementById("myVideo");
+
+            console.log('Add timeupdate EventListener');
+
+            video.addEventListener('timeupdate', function onTimeUpdate(e) {
+                console.log('Time updated: ' + video.currentTime);
+                if (video.currentTime > 5) {
+                    video.removeEventListener('timeupdate', onTimeUpdate);
+                    console.log('Delete timeupdate EventListener');
+                }
+            });
+        </script>
+    </body>
+</html>
