@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Div Table</title>
+		<style>
+			.table {
+				width: 100%;
+				margin: 0 0 0 0;
+				padding: 5px 0 5px 0;
+				/*overflow: hidden;*/
+			}
+			.cell-column {
+				display: inline-block;
+				/*vertical-align: top;
+				padding-right: 5px;*/
+			}
+			.cell {_
+				border: 1px solid black;
+				margin: 2px;
+				padding: 2px;
+			}
+			.test-status-pass {
+				display: inline-block;
+				min-width: 10px;
+				background-color: #080;
+			}
+			.test-status-fail {
+				display: inline-block;
+				min-width: 10px;
+				background-color: #800;
+			}
+			.cell-name {
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="table">
+			<div class="cell-column">
+				<div class="cell">
+					<div class="test-status-pass" id="test-item-status-0">&nbsp;</div>
+					<div class="cell-name" id="test-item-name-0">
+						<span class="focusable" tabindex="0" title="Test if this works">AudioContext</span>
+					</div>
+				</div>
+				<div class="cell">
+					<div class="test-status-pass" id="test-item-status-1">&nbsp;</div>
+					<div class="cell-name" class="test-item-name-1">
+						<span class="focusable" tabindex="0" title="Test if this works">AudioContext.destination</span>
+					</div>
+				</div>
+			</div>
+			<div class="cell-column">
+				<div class="cell">
+					<div class="test-status-pass" id="test-item-status-2">&nbsp;</div>
+					<div class="cell-name" class="test-item-name-2">
+						<span class="focusable" tabindex="0" title="Test if this works">AudioContext.sampleRate</span>
+					</div>
+				</div>
+				<div class="cell">
+					<div class="test-status-fail" id="test-item-status-3">&nbsp;</div>
+					<div class="cell-name" class="test-item-name-3">
+						<span class="focusable" tabindex="0" title="Test if this works">AudioContext.currentTime</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
